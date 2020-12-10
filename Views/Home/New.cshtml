@@ -1,0 +1,57 @@
+@model DishRecipe
+@{
+    ViewData["Title"] = "Home Page";
+}
+@* I need to create a function for home controller. use our form asp-action to link our method in our home controllers *@
+<style type="text/css">
+    label {
+        width: 100px;
+    }
+    input {
+        width: 200px;
+    }
+    select {
+        width: 200px;
+    }
+    textarea {
+        width: 200px;
+    }
+</style>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <p>Welcome to the dish creation section</p>
+    <p><a href="/">Home</a></p>
+    <br/>
+
+    <form asp-action="CreateNewRecipe" asp-controller="Home" method="post">
+        <label for="Name"></label>
+       Dish Name: <input asp-for="Name">
+       <br/>
+
+        <label for="Chef"></label>
+       Chef Name: <input type="text" asp-for="Chef"/>
+       <br/>
+
+        <label for="Calories"></label>
+       Cal Content: <input type="text" asp-for="Calories"/>
+       <br/>
+
+        <label for="Description"></label>
+       Description: <textarea name="Description" id="" cols="30" rows="5" asp-for="Description"></textarea>
+        <br/>
+
+        <label for="Tastiness">Tastiness</label>
+        <select name="Tastiness" asp-for="Tastiness" id="">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <br/>
+        
+        <button type="submit">Create Dish</button>
+    </form>
+</div>

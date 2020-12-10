@@ -1,0 +1,35 @@
+@model DishRecipe
+
+<p><a href="/">Home</a></p>
+
+
+@* <a asp-action="Edit" asp-route-DishRecipeId></a> *@
+<form action="/edit/@Model.DishRecipeId" method="post">
+    <label for="Name"></label>
+    Dish Name: <input asp-for="Name" value="@Model.Name">
+    <br />
+
+    <label for="Chef"></label>
+    Chef Name: <input type="text" asp-for="Chef"value="@Model.Chef">
+    <br />
+
+    <label for="Calories"></label>
+    Cal Content: <input type="text" asp-for="Calories" value="@Model.Calories">
+    <br />
+
+    <label for="Description"></label>
+    Description: <textarea name="Description" id="" cols="30" rows="5" asp-for="Description"value="@Model.Description"></textarea>
+    <br />
+
+    <label for="Tastiness">@Model.Tastiness</label>
+    <select name="Tastiness" asp-for="Tastiness" id="" value="Model.Tastiness">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+    <br />
+
+    <button type="submit">Edit Dish</button>
+</form>

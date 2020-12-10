@@ -1,0 +1,18 @@
+@model DishRecipe
+
+    <p><a href="/">Home</a></p>
+
+        
+            <p>Dish Name: @Model.Name</p>
+            <p>Chef Name: @Model.Chef</p>
+            <p>Caloric Content: @Model.Calories</p>
+            <p>Description: @Model.Description</p>
+            <p>Tastiness: @Model.Tastiness</p>
+        
+            <form action="/deletedish" method="post">
+            <input type="hidden" name="DishRecipeId" value="@Model.DishRecipeId">
+            <button type="submit" value="Delete" >Delete</button>
+            </form>
+
+            <a asp-action="EditPage" asp-route-DishRecipeId="@Model.DishRecipeId">Edit</a>
+      

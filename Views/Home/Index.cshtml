@@ -1,0 +1,18 @@
+﻿@model List<DishRecipe>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <p>Welcome to the index home page</p>
+    <p><a href="/new">Create New Dish</a></p>
+    @* .AllDishes comes from our home controller the index() . Name comes from our dish recipe models. DishRecipeId also comes form our models*@
+    @{
+        foreach(DishRecipe d in Model){
+            <p><a href="/@d.DishRecipeId">@d.Name </a>Created by: @d.Chef</p>
+        }
+    }
+
+</div>
